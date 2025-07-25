@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --text: #ebebeb;
+  --text-primary: #ebebeb;
   --text-secondary: #6b6b6b;
 
   --primary: #462878;
@@ -21,22 +23,24 @@
          0px 0px 2px 0px rgba(0, 0, 0, 0.29), 
          0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset;
  
-    --font: 'Rubik', sans-serif;
+  --font: 'Rubik', sans-serif;
 
   font-family: var(--font);
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--text);
-  background-color: --secondary;
+  color: var(--text-primary);
+  background-color: var(--secondary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+ 
 
+/*
 a {
   font-weight: 500;
   color: #646cff;
@@ -90,3 +94,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+  */
