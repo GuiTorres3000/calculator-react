@@ -45,11 +45,14 @@ export function Text<E extends React.ElementType = 'span'>({
   children,
   ...props
 }: TextProps<E>) {
-  const Component = as || 'span';
-  const combinedClassName = `${textVariants[variant]} ${className}`.trim();
+const Component = as || 'span'
+  const classes = [
+    textVariants[variant],
+    className,
+  ].filter(Boolean).join(' ')
 
   return (
-    <Component className={combinedClassName} {...props}>
+    <Component className={classes} {...props}>
       {children}
     </Component>
   );
