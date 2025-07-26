@@ -1,5 +1,7 @@
+/*
+
 import type { ReactNode } from "react";
-import { Text } from "./Text";
+import Text from "./Text";
 
 interface ButtonProps {
       children: ReactNode;
@@ -18,3 +20,6 @@ export function Button({ className = '', children }: ButtonProps) {
 
       );
 }
+
+
+*/
