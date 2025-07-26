@@ -1,7 +1,9 @@
+import type { ElementType, ReactNode, ComponentPropsWithoutRef } from 'react'
+
 const textVariants = {
   default: 'text-xl text-(--text-primary)',
   muted: 'text-xl text-(--text-secondary)',
-  heading: 'text-xl',
+  heading: 'text-2xl',
   blast: 'text-3xl'
 } as const;
 /* Quando eu não passo "as const" o TS infere os valores como string. 
@@ -22,19 +24,26 @@ Já que estou usando keyof, quero pegar apenas as chaves, assim fazendo o result
 type TextVariant = 'default' | 'muted' | 'heading' | 'blast'; */
 
 // Tipo genérico recebe um tipo como entrada e retorna algo tipado com base nisso
-interface TextProps extends React.HTMLProps<HTMLElement> {
+type TextProps<T extends ElementType> = {
+  as?: T
   variant?: TextVariant;
   className?: string;
-  children: React.ReactNode; 
-}
+  children: ReactNode;
+} & ComponentPropsWithoutRef<T>
 
-const Text: React.FC<TextProps> = ({ variant = 'default', className = '', children, ...props }) => {
-  const textClass = textVariants[variant];
+export function Text<T extends ElementType = 'span'>({
+  as,
+  variant = 'default',
+  className = '',
+  children,
+  ...props
+}: TextProps<T>) {
+  const Component = as || 'span'
+  const textClass = textVariants[variant]
+
   return (
-    <span className={`${textClass} ${className}`} {...props}>
+    <Component className={`${textClass} ${className}`} {...props}>
       {children}
-    </span>
-  );
-};
-
-export default Text;
+    </Component>
+  )
+}
