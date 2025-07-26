@@ -1,6 +1,6 @@
 
 import './App.css'
-import { Calculator } from './components/organisms/calculator'
+import { Calculator } from './components/templates/Calculator'
 
 function App() {
 

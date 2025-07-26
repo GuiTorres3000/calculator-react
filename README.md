@@ -15,5 +15,6 @@ Conceitos reafirmados em TypeScript como
 
 Referencias utilizadas para o treino:
 
+Curso React Rocketseat
 [text](https://www.youtube.com/watch?v=6M9aZzm-kEc)
 [text](https://www.youtube.com/watch?v=EcCTIExsqmI)

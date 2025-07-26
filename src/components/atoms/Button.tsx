@@ -9,7 +9,7 @@ const buttonVariants = {
 type ButtonVariant = keyof typeof buttonVariants
 
 interface ButtonProps {
-      variant: ButtonVariant,
+      variant?: ButtonVariant,
       children: ReactNode;
       className?: string;
 }
