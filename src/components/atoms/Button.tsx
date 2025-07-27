@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Text } from "./Text";
 
 const buttonVariants = {
-      default: "bg-(--background)",
+      default: "bg-(--secondary)",
       primary: "bg-(--primary)",
 } as const
 

@@ -6,8 +6,8 @@ import { HistoryOperations } from './components/templates/HistoryOperations'
 function App() {
 
   return (
-    <div>
-      <main className="flex flex-col justify-center gap-16 sm:flex-row sm:items-stretch sm:translate-y-1/5">
+    <div className="min-h-screen flex items-center justify-center">
+      <main className="flex flex-col justify-center py-12 gap-8 sm:py-0 sm:gap-16 sm:flex-row sm:items-stretch">
         <Calculator />
         <HistoryOperations />
       </main>

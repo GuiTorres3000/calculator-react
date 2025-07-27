@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
 O objetivo do projeto é entrar mais afundo na utilização de conceitos de React e TypeScript.
+Modelo Atômico do react
 
 Conceitos reafirmados em React como
   - Type aliases (React.ElementType, React.ReactNode...)
