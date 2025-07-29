@@ -5,7 +5,7 @@ import { Card } from "../molecules/Card";
 export function HistoryOperations() {
 
       return (
-            <Card className="flex-col flex-start py-16 px-8">
+            <Card className="flex-col flex-start py-16 px-8 w-[22.25rem]">
                   <Text as="h1" variant="heading" className="mb-4 items-start">Histórico de Operações</Text>
 
                   <ul className="flex flex-col gap-2 items-start">

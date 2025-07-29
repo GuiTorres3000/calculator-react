@@ -1,37 +1,54 @@
 import { Button } from "../atoms/Button";
 
+const buttonsList = [
+      [
+            { name: "CE" },
+            { name: "C", className: "flex-1 h-16" },
+            { name: "/", variant: "primary" },
+      ],
+      [
+            { name: "7" },
+            { name: "8" },
+            { name: "9" },
+            { name: "*", variant: "primary" },
+      ],
+      [
+            { name: "4" },
+            { name: "5" },
+            { name: "6" },
+            { name: "-", variant: "primary" },
+      ],
+      [
+            { name: "3" },
+            { name: "2" },
+            { name: "1" },
+            { name: "+", variant: "primary" },
+      ],
+      [
+            { name: "0", className: "flex-1 h-16" },
+            { name: "," },
+            { name: "=", className: "w-16 h-16 bg-[#7F45E2]" },
+      ],
+];
+
 export function CalculatorKeyboard() {
       return (
 
             <div className="flex flex-col gap-3">
-                  <div className="flex gap-3">
-                        <Button className="w-16 h-16">CE</Button>
-                        <Button className="flex-1/2 h-16">C</Button>
-                        <Button variant="primary" className="w-16 h-16">/</Button>
-                  </div>
-                  <div className="flex gap-3">
-                        <Button className="w-16 h-16">7</Button>
-                        <Button className="w-16 h-16">8</Button>
-                        <Button className="w-16 h-16">9</Button>
-                        <Button variant="primary" className="w-16 h-16">*</Button>
-                  </div>
-                  <div className="flex gap-3">
-                        <Button className="w-16 h-16">4</Button>
-                        <Button className="w-16 h-16">5</Button>
-                        <Button className="w-16 h-16">6</Button>
-                        <Button variant="primary" className="w-16 h-16">-</Button>
-                  </div>
-                  <div className="flex gap-3">
-                        <Button className="w-16 h-16">1</Button>
-                        <Button className="w-16 h-16">2</Button>
-                        <Button className="w-16 h-16">3</Button>
-                        <Button variant="primary" className="w-16 h-16">+</Button>
-                  </div>
-                   <div className="flex gap-3">
-                        <Button className="flex-1/2 h-16">0</Button>
-                        <Button className="w-16 h-16">,</Button>
-                        <Button variant="primary" className="w-16 h-16">=</Button>
-                  </div>
+
+                  {buttonsList.map((row, index) => (
+                        <div key={`row-${index}`} className="flex gap-3">
+                              {row.map((button) => (
+                                    <Button key={button.name} 
+                                    className={button.className ? button.className : `w-16 h-16`}
+                                    variant={button.variant ? button.variant : `default`}>
+                                          {button.name}
+                                    </Button>
+                              ))}
+
+                        </div>
+                  ))
+                  }
             </div>
 
       );
