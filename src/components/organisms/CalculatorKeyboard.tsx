@@ -1,6 +1,13 @@
 import { Button } from "../atoms/Button";
+import type { ButtonVariant } from "../atoms/Button";
 
-const buttonsList = [
+interface ButtonListProps {
+      name: string;
+      className?: string;
+      variant?: ButtonVariant;
+}
+
+const buttonsList: ButtonListProps[][] = [
       [
             { name: "CE" },
             { name: "C", className: "flex-1 h-16" },
@@ -39,9 +46,9 @@ export function CalculatorKeyboard() {
                   {buttonsList.map((row, index) => (
                         <div key={`row-${index}`} className="flex gap-3">
                               {row.map((button) => (
-                                    <Button key={button.name} 
-                                    className={button.className ? button.className : `w-16 h-16`}
-                                    variant={button.variant ? button.variant : `default`}>
+                                    <Button key={button.name}
+                                          className={button.className ? button.className : `w-16 h-16`}
+                                          variant={button.variant ? button.variant : `default`}>
                                           {button.name}
                                     </Button>
                               ))}

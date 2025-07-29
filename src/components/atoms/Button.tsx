@@ -6,7 +6,7 @@ const buttonVariants = {
       primary: "bg-(--primary)",
 } as const
 
-type ButtonVariant = keyof typeof buttonVariants
+export type ButtonVariant = keyof typeof buttonVariants;
 
 interface ButtonProps {
       variant?: ButtonVariant,
