@@ -8,6 +8,11 @@ export function Calculator() {
       const [operation, setOperation] = useState('');
       const [result, setResult] = useState('');
       const handleInputClick = (name: string) => {
+            if (result){
+                  setOperation(isNaN(Number(name)) ? result : name);
+                  setResult("");
+                  return;
+            }
             if (name === "=") {
                   const operationResult = eval(operation.replace(/,/g, '.'));
                   const parsedResult = operationResult.toString().replace(/\./g, ",");
@@ -17,8 +22,16 @@ export function Calculator() {
             else if (name === "," && !operation.endsWith(",")){
                   setOperation(`${operation},`);
                   return;
+            } else if(name === "C"){
+                  setOperation("");
+                  setResult("");
+                  return;
+            } else if (name === "CE"){
+                  setResult("");
+                  setOperation(operation.slice(0, -1))
+                  return;
             } else {
-                  setOperation(`${operation}${operation.endsWith(",") ? "" : " "}${name}`);
+                  setOperation(`${operation}${name}`);
             }
       };
 
