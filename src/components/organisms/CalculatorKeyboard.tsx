@@ -38,7 +38,11 @@ const buttonsList: ButtonListProps[][] = [
       ],
 ];
 
-export function CalculatorKeyboard() {
+interface CalculatorKeyboardProps {
+  onButtonClick: (value: string) => void;
+}
+
+export function CalculatorKeyboard({onButtonClick}: CalculatorKeyboardProps) {
       return (
 
             <div className="flex flex-col gap-3">
@@ -48,7 +52,8 @@ export function CalculatorKeyboard() {
                               {row.map((button) => (
                                     <Button key={button.name}
                                           className={button.className ? button.className : `w-16 h-16`}
-                                          variant={button.variant ? button.variant : `default`}>
+                                          variant={button.variant ? button.variant : `default`}
+                                          onClick={() => onButtonClick(button.name)}>
                                           {button.name}
                                     </Button>
                               ))}

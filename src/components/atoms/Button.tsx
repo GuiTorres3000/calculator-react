@@ -12,13 +12,14 @@ interface ButtonProps {
       variant?: ButtonVariant,
       children: ReactNode;
       className?: string;
-}
+      onClick?: () => void;
+} 
 
-export function Button({ variant = 'default', className, children }: ButtonProps) {
+export function Button({ variant = 'default', className, children, onClick }: ButtonProps) {
       const buttonClass = buttonVariants[variant];
 
       return (
-            <Text as="button" variant="heading"
+            <Text as="button" variant="heading" onClick={onClick}
                   className={`
                   ${buttonClass}
                   flex items-center justify-center rounded-xl p-3 cursor-pointer 
