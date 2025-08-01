@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Card } from "../molecules/Card";
 import { CalculatorDisplay } from "../organisms/CalculatorDisplay";
 import { CalculatorKeyboard } from "../organisms/CalculatorKeyboard";
+import { useCalculatorContext } from "../../hooks/useCalculatorContext";
 
 export function Calculator() {
 
       const [operation, setOperation] = useState('');
       const [result, setResult] = useState('');
-
+      const { updateHistory } = useCalculatorContext();
 
       const calculate = (expression: string): string => {
             try {

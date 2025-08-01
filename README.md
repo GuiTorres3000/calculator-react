@@ -7,6 +7,7 @@ Conceitos reafirmados em React como
   - Type aliases (React.ElementType, React.ReactNode...)
   - Utility Types (Omit, Pick, Partial...)
   - Tipagem de Props Herdadas
+  - Contextos e Hooks
 
 Conceitos reafirmados em TypeScript como
   - Generics <>  

@@ -20,3 +20,5 @@ export function CalculatorProvider({ children }: { children: React.ReactNode }) 
             </CalculatorContext.Provider >
       );
 }
+
+export { CalculatorContext }
