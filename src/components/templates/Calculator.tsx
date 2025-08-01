@@ -7,6 +7,8 @@ export function Calculator() {
 
       const [operation, setOperation] = useState('');
       const [result, setResult] = useState('');
+
+
       const calculate = (expression: string): string => {
             try {
                   const sanitized = expression.replace(/[^-()\d/*+.]/g, '');
@@ -33,6 +35,7 @@ export function Calculator() {
                         setResult("Erro");
                   } else {
                         setResult(parsedResult.replace(/\./g, ","));
+                        updateHistory(operation, parsedResult);
                   }
                   return;
             }
