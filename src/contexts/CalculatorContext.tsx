@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 type CalculatorContextType = {
   history: string[];
@@ -9,9 +9,22 @@ const CalculatorContext = createContext<CalculatorContextType | undefined>(undef
 
 export function CalculatorProvider({ children }: { children: React.ReactNode }) {
       const [history, setHistory] = useState<string[]>([]);
+      const historyStorageKey = 'history';
+
+      useEffect(() => {
+            const savedHistory = localStorage.getItem(historyStorageKey);
+            setHistory(JSON.parse(savedHistory || '[]'))
+      }, [])
 
       function updateHistory(operation: string, parsedResult: string) {
-            setHistory((prev) => [... prev, `${operation}=${parsedResult}`])
+            setHistory((prev) => {
+                  const updatedHistory = [... prev, `${operation}=${parsedResult}`]
+                  localStorage.setItem(
+                        historyStorageKey,
+                        JSON.stringify(updatedHistory)
+                  )
+                  return updatedHistory;
+            });
       }
 
       return (

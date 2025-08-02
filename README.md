@@ -8,6 +8,7 @@ Conceitos reafirmados em React como
   - Utility Types (Omit, Pick, Partial...)
   - Tipagem de Props Herdadas
   - Contextos e Hooks
+  - LocalStorage
 
 Conceitos reafirmados em TypeScript como
   - Generics <>  
