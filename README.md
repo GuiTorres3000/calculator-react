@@ -1,23 +1,39 @@
-# React + TypeScript + Vite
+# CalculadoraReact (Context API + LocalStorage + CustomHooks)
 
-O objetivo do projeto é entrar mais afundo na utilização de conceitos de React e TypeScript.
-Modelo Atômico do react
+Uma calculadora desenvolvida com React, TypeScript, Tailwind e Vite, aplicando o Modelo Atômico de Componentização. (`atoms`, `molecules`, `organisms` e `templates`)
+Este projeto foi criado para aprofundar conhecimentos em conceitos de React e TypeScript, com foco em boas práticas, tipagem robusta e arquitetura escalável.
 
-Conceitos reafirmados em React como
-  - Type aliases (React.ElementType, React.ReactNode...)
-  - Utility Types (Omit, Pick, Partial...)
-  - Tipagem de Props Herdadas
-  - Contextos e Hooks
-  - LocalStorage
+## ✨ Conceitos Aplicados
+- Boas práticas de acessibilidade e semântica.
+React:
+- Histórico persistente de operações armazenadas por `localStorage`.
+- Comunicação entre componentes através de `Contextos` encapsulados por componentes de `Providers` (Gerenciamento global do histórico e lógica de operações matemáticas).
+- Hooks customizados para realização de cálculo e chamada do contexto
+TS:
+- Type aliases e utility types (Omit, Pick, Partial)
+- Uso de keyof, typeof e generics para tipagem precisa
+- Componentes polimórficos (Ex: Text, que aceita diferentes elementos HTML via prop)
+Tailwind:
+- Variáveis de estilização personalizadas (Tailwind)
+- Componentes responsívos utilizando Tailwind
 
-Conceitos reafirmados em TypeScript como
-  - Generics <>  
-  - keyof/typeof
-  - Polymorphic as Prop
+## Estrutura do Projeto
+```bash
+src/
+  components/
+    atoms/        # Botões, textos
+    molecules/    # Cards
+    organisms/    # Display, teclado
+    templates/    # Calculadora, histórico
+  contexts/       # Contexto global da calculadora
+  hooks/          # Hooks customizados
+```
 
+## 🚀 Como Executar o Projeto
+```bash
+# Instale as dependências
+npm install
 
-Referencias utilizadas para o treino:
-
-Curso React Rocketseat
-[text](https://www.youtube.com/watch?v=6M9aZzm-kEc)
-[text](https://www.youtube.com/watch?v=EcCTIExsqmI)
+# Rode o projeto em modo desenvolvimento
+npm run dev
+```
